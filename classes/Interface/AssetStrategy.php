@@ -1,12 +1,10 @@
 <?php
 
-interface Interface_AssetStrategy {
+interface AssetStrategy {
 
     public function get(): ?string;
 
-    public function get_info(): ?array;
-
     public function validate(): bool;
 
-    public function save(): bool;
+    public function save(): string;
 }

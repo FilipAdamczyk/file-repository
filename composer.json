@@ -1,0 +1,9 @@
+{
+  "name": "file-repository",
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "require": {
+    "aws/aws-sdk-php": "^3.54"
+  }
+}

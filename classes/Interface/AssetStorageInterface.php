@@ -1,14 +1,12 @@
 <?php
 
-interface Interface_AssetStorageInterface {
+interface AssetStorageInterface {
 
     public function __construct();
 
-    public function get(): string;
+    public function get(): ?string;
 
-    public function get_info(): ?array;
-
-    public function save(string $mode = null): string;
+    public function save(): string;
 
     public function asset_exists(string $size = null): bool;
 
@@ -17,8 +15,6 @@ interface Interface_AssetStorageInterface {
     public function set_platform(string $platform);
 
     public function set_type(string $type);
-
-    public function set_tenant_id(int $tenant_id);
 
     public function set_ttl(int $ttl = 300);
 
