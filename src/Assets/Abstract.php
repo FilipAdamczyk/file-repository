@@ -1,5 +1,10 @@
 <?php
 
+namespace Assets;
+
+use Interfaces\AssetStorageInterface;
+use Interfaces\AssetStrategy;
+
 abstract class AssetsAbstract {
 
     /**

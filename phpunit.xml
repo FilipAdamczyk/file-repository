@@ -1,0 +1,7 @@
+<phpunit colors="true" bootstrap="autoload.php">
+    <testsuites>
+        <testsuite name="asset-repository">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

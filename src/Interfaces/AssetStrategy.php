@@ -1,5 +1,7 @@
 <?php
 
+namespace Interfaces;
+
 interface AssetStrategy {
 
     public function get(): ?string;

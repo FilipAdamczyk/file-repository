@@ -1,5 +1,10 @@
 <?php
 
+namespace Strategy;
+
+use Interfaces\AssetStrategy;
+use Interfaces\AssetStorageInterface;
+
 class AssetFile implements AssetStrategy
 {
     /**
@@ -37,7 +42,7 @@ class AssetFile implements AssetStrategy
         }
     }
 
-    public function get(): string
+    public function get(): ?string
     {
         $this->_asset_handler_set_config();
 

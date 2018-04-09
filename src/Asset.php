@@ -1,15 +1,21 @@
 <?php
 
+use Strategy\AssetFile;
+use Strategy\AssetImage;
+use Repository\S3Storage;
+
 class Asset {
     const CONFIG = 'config';
     const LOGO = 'logo';
 
     /**
+     * $item_params array consists of item - item type, platform - android, ios, ios_sandbox and size - optional
+     *
      * @param array $item_params
-     * @return AssetsAbstract
+     * @return Assets\AssetsAbstract
      * @throws HttpException
      */
-    public static function factory(array $item_params): AssetsAbstract
+    public static function factory(array $item_params): Assets\AssetsAbstract
     {
         $item_type = $item_params['item'];
         $model_name = self::_build_model_name($item_type);
@@ -53,6 +59,6 @@ class Asset {
 
     private static function _build_model_name(string $item_type): string
     {
-        return 'Assets' . ucfirst(strtolower($item_type));
+        return 'Assets\Assets' . ucfirst(strtolower($item_type));
     }
 }

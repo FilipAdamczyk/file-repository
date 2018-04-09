@@ -1,5 +1,7 @@
 <?php
 
+namespace Constants;
+
 class MobilePlatforms
 {
     const ANDROID_PLATFORM = 'android';

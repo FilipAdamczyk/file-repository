@@ -1,5 +1,8 @@
 <?php
 
+namespace Repository;
+
+use Interfaces\AssetStorageInterface;
 use \Aws\S3\S3Client;
 use \Aws\S3\Exception\S3Exception;
 
@@ -41,11 +44,21 @@ class S3Storage implements AssetStorageInterface
 
     public function save(): string
     {
-        return $this->_s3_handle->upload_request_presign(
-            $this->_build_asset_uri(),
-            false,
-            $this->_metadata
-        );
+        $request_params = [
+            'ACL' => 'private',
+            'Bucket' => $this->_bucket,
+            'Body' => '',
+            'Key' => $this->_build_asset_uri()
+        ];
+
+        if ( ! is_null($this->_metadata) )
+        {
+            $request_params['Metadata'] = $this->_metadata;
+        }
+
+        $request = $this->_s3_handle->getCommand('PutObject', $request_params);
+
+        return $this->_s3_handle->createPresignedRequest($request, $this->_ttl);
     }
 
     public function asset_exists(string $size = null): bool

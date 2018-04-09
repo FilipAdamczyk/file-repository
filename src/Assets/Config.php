@@ -1,5 +1,7 @@
 <?php
 
+namespace Assets;
+
 class AssetsConfig extends AssetsAbstract {
 
     public function validate(): bool

@@ -1,5 +1,7 @@
 <?php
 
+namespace Interfaces;
+
 interface AssetStorageInterface {
 
     public function __construct();

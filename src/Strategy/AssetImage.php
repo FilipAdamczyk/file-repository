@@ -1,5 +1,11 @@
 <?php
 
+namespace Strategy;
+
+use Interfaces\AssetStrategy;
+use Interfaces\AssetStorageInterface;
+use Constants\MobilePlatforms;
+
 class AssetImage implements AssetStrategy
 {
 
